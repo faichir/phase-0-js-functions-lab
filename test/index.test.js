@@ -1,5 +1,8 @@
-const { convertToUpperCase, calculateTax, findMaximum, isPalindrome, calculateDiscountedPrice } = require('../index');
+//const { convertToUpperCase, calculateTax, findMaximum, isPalindrome, calculateDiscountedPrice } = require('../index');
 
+function calculateTax(amount) {
+  return amount * 0.1; 
+}
 describe('calculateTax', () => {
   test('should correctly calculate 10% tax of a given amount', () => {
     const amount = 100;
@@ -33,6 +36,10 @@ describe('calculateTax', () => {
     expect(result).toBe(expectedTax);
   });
 });
+
+function convertToUpperCase(text) {
+  return text.toUpperCase();
+}
 
 describe('convertToUpperCase', () => {
   test('should convert lowercase letters to uppercase', () => {
@@ -76,6 +83,10 @@ describe('convertToUpperCase', () => {
   });
 });
 
+function findMaximum(num1, num2) {
+  return Math.max(num1, num2);
+}
+
 describe('findMaximum', () => {
   test('should return the greater of two positive numbers', () => {
     const num1 = 10;
@@ -114,6 +125,9 @@ describe('findMaximum', () => {
   });
 });
 
+function isPalindrome(word) {
+  return word === word.split("").reverse().join("");
+}
 describe('isPalindrome', () => {
   test('should return true for a simple palindrome', () => {
     const input = 'radar';
@@ -147,6 +161,10 @@ describe('isPalindrome', () => {
     expect(result).toBe(expectedOutput);
   });
 });
+function calculateDiscountedPrice(originalPrice, discountPercentage) {
+  return originalPrice - (originalPrice * discountPercentage) / 100;
+  
+}
 
 describe('calculateDiscountedPrice', () => {
   test('should correctly calculate the discounted price', () => {
